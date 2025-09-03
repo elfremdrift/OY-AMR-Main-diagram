@@ -1,0 +1,5 @@
+#!/bin/env bash
+cd $(git rev-parse --show-toplevel)
+kicad-cli sch export pdf -o OY-AMR-Main-diagram.sch.pdf OY-AMR-Main-diagram.kicad_sch
+kicad-cli pcb export pdf -l F.Cu,B.Cu,F.Silkscreen,F.Courtyard --ibt -o OY-AMR-Main-diagram.pcb.pdf OY-AMR-Main-diagram.kicad_pcb
+git add OY-AMR-Main-diagram.sch.pdf OY-AMR-Main-diagram.pcb.pdf
